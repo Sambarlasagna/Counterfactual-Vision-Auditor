@@ -1,0 +1,85 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+ml-venv/
+.venv/
+env/
+ENV/
+
+# =========================
+# Model weights & checkpoints (NEVER commit these)
+# =========================
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+*.h5
+outputs/checkpoints/
+
+# =========================
+# Datasets (download separately, see data/README.md)
+# =========================
+data/waterbirds*/
+data/CUB*/
+data/wilds/
+data/*.tar.gz
+data/*.zip
+data/*.tgz
+
+# =========================
+# Cached masks and large outputs
+# =========================
+outputs/masks/
+outputs/interventions/
+
+# =========================
+# Archives
+# =========================
+*.tar.gz
+*.zip
+*.tgz
+*.tar
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# OS generated
+# =========================
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# =========================
+# Misc
+# =========================
+.env
+wandb/
+mlruns/
+*.log
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/

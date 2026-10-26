@@ -1,0 +1,62 @@
+# =============================================================================
+# Counterfactual Vision Auditor — ViT Baseline Configuration (Stretch Goal)
+# =============================================================================
+
+# --- Model ---
+model:
+  name: vit_small      # timm: vit_small_patch16_224
+  pretrained: true
+  num_classes: 2
+  freeze_backbone: true   # Start frozen; fine-tune head only
+
+# --- Dataset ---
+dataset:
+  name: waterbirds
+  root: data/waterbirds
+  image_size: 224
+  num_workers: 0
+  pin_memory: true
+
+# --- Training ---
+training:
+  batch_size: 8           # Smaller batch for ViT on 6 GB VRAM
+  epochs: 20
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  optimizer: adamw
+  scheduler: cosine
+  warmup_epochs: 3
+  mixed_precision: true
+  gradient_clip: 1.0
+
+# --- Evaluation ---
+evaluation:
+  batch_size: 16
+  metrics:
+    - accuracy
+    - group_accuracy
+    - worst_group_accuracy
+    - confusion_matrix
+
+# --- Checkpointing ---
+checkpointing:
+  save_dir: outputs/checkpoints
+  save_best: true
+  save_every: 5
+  metric: worst_group_accuracy
+
+# --- Logging ---
+logging:
+  log_dir: outputs/logs
+  log_every: 10
+  save_metrics: true
+
+# --- Reproducibility ---
+seed: 42
+deterministic: true
+
+# --- Smoke test mode ---
+smoke_test:
+  enabled: false
+  num_samples: 100
+  epochs: 2

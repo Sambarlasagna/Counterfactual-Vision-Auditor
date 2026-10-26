@@ -1,0 +1,62 @@
+# =============================================================================
+# Counterfactual Vision Auditor — ResNet-18 Baseline Configuration
+# =============================================================================
+
+# --- Model ---
+model:
+  name: resnet18
+  pretrained: true
+  num_classes: 2          # Waterbirds: landbird vs waterbird
+  freeze_backbone: false  # Fine-tune entire network
+
+# --- Dataset ---
+dataset:
+  name: waterbirds
+  root: data/waterbirds
+  image_size: 224
+  num_workers: 0          # Windows-safe default; increase if stable
+  pin_memory: true
+
+# --- Training ---
+training:
+  batch_size: 16          # Safe for 6 GB VRAM; reduce to 8 if OOM
+  epochs: 30
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: adam
+  scheduler: cosine       # cosine annealing
+  warmup_epochs: 2
+  mixed_precision: true   # AMP for memory efficiency
+  gradient_clip: 1.0
+
+# --- Evaluation ---
+evaluation:
+  batch_size: 32
+  metrics:
+    - accuracy
+    - group_accuracy
+    - worst_group_accuracy
+    - confusion_matrix
+
+# --- Checkpointing ---
+checkpointing:
+  save_dir: outputs/checkpoints
+  save_best: true         # Save best model by worst-group val accuracy
+  save_every: 5           # Also save every N epochs
+  metric: worst_group_accuracy
+
+# --- Logging ---
+logging:
+  log_dir: outputs/logs
+  log_every: 10           # Log every N batches
+  save_metrics: true      # Save metrics to JSON after each epoch
+
+# --- Reproducibility ---
+seed: 42
+deterministic: true       # torch.backends.cudnn.deterministic
+
+# --- Smoke test mode ---
+smoke_test:
+  enabled: false
+  num_samples: 100        # Use only this many samples
+  epochs: 2               # Train for only this many epochs
