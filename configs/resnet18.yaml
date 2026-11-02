@@ -12,7 +12,7 @@ model:
 # --- Dataset ---
 dataset:
   name: waterbirds
-  root: data/waterbirds
+  root: data/waterbirds/waterbird_complete95_forest2water2
   image_size: 224
   num_workers: 0          # Windows-safe default; increase if stable
   pin_memory: true
