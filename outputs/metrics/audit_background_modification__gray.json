@@ -1,0 +1,387 @@
+{
+  "intervention_type": "background_modification",
+  "method": "gray",
+  "num_samples": 500,
+  "elapsed_seconds": 49.64,
+  "metrics": {
+    "flip_rate": 0.472,
+    "mean_probability_change": 0.1282818764448166,
+    "std_probability_change": 0.47503116726875305,
+    "mean_confidence_change": 0.3402978479862213,
+    "std_confidence_change": 0.3553987145423889,
+    "mean_jsd": 0.1565941721200943,
+    "median_jsd": 0.0811200886964798,
+    "per_group": {
+      "0": {
+        "flip_rate": 0.7176470588235294,
+        "mean_probability_change": 0.5910263061523438,
+        "mean_confidence_change": 0.5761416554450989,
+        "mean_jsd": 0.27243772149086,
+        "count": 170
+      },
+      "1": {
+        "flip_rate": 0.25,
+        "mean_probability_change": 0.07113280892372131,
+        "mean_confidence_change": 0.13862228393554688,
+        "mean_jsd": 0.05045241490006447,
+        "count": 176
+      },
+      "2": {
+        "flip_rate": 0.7948717948717948,
+        "mean_probability_change": -0.5984830856323242,
+        "mean_confidence_change": 0.5512319803237915,
+        "mean_jsd": 0.26504141092300415,
+        "count": 78
+      },
+      "3": {
+        "flip_rate": 0.10526315789473684,
+        "mean_probability_change": -0.02856873907148838,
+        "mean_confidence_change": 0.06330540776252747,
+        "mean_jsd": 0.03197134658694267,
+        "count": 76
+      }
+    }
+  },
+  "examples": [
+    {
+      "idx": 0,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0046_18.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.09861255437135696,
+        0.9013874530792236
+      ],
+      "modified_probs": [
+        0.04999275878071785,
+        0.9500072598457336
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 1,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0002_55.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.9403829574584961,
+        0.05961708351969719
+      ],
+      "modified_probs": [
+        0.081744484603405,
+        0.9182555675506592
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 2,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0085_92.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.1296592801809311,
+        0.8703406453132629
+      ],
+      "modified_probs": [
+        0.1653996706008911,
+        0.8346003293991089
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 3,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0025_796057.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.03541162237524986,
+        0.9645883440971375
+      ],
+      "modified_probs": [
+        0.10666219145059586,
+        0.8933377861976624
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 4,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0086_796062.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.7057729959487915,
+        0.2942270338535309
+      ],
+      "modified_probs": [
+        0.11381518095731735,
+        0.8861848711967468
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 5,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0049_796063.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 0,
+      "original_probs": [
+        0.9979436993598938,
+        0.0020563467405736446
+      ],
+      "modified_probs": [
+        0.8920590281486511,
+        0.10794101655483246
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 6,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0006_796065.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.895003080368042,
+        0.10499691963195801
+      ],
+      "modified_probs": [
+        0.07888360321521759,
+        0.9211164116859436
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 7,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0016_796067.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.9800524711608887,
+        0.019947607070207596
+      ],
+      "modified_probs": [
+        0.031018147245049477,
+        0.9689818620681763
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 8,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0065_796068.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.1500563770532608,
+        0.8499436378479004
+      ],
+      "modified_probs": [
+        0.052145179361104965,
+        0.9478548169136047
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 9,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0042_796071.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.047363463789224625,
+        0.9526365399360657
+      ],
+      "modified_probs": [
+        0.031124239787459373,
+        0.9688757658004761
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 10,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0090_796077.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 0,
+      "original_probs": [
+        0.939039409160614,
+        0.06096060574054718
+      ],
+      "modified_probs": [
+        0.7415429353713989,
+        0.2584570348262787
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 11,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0061_796082.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.8505197167396545,
+        0.14948029816150665
+      ],
+      "modified_probs": [
+        0.17758764326572418,
+        0.822412371635437
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 12,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0008_796083.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.9572615027427673,
+        0.042738527059555054
+      ],
+      "modified_probs": [
+        0.04173911735415459,
+        0.9582608938217163
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 13,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0033_796086.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.007395809516310692,
+        0.9926041960716248
+      ],
+      "modified_probs": [
+        0.010771862231194973,
+        0.9892281293869019
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 14,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0024_796089.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.10040359199047089,
+        0.8995963931083679
+      ],
+      "modified_probs": [
+        0.04033772274851799,
+        0.9596623182296753
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 15,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0005_796090.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.4848308563232422,
+        0.5151691436767578
+      ],
+      "modified_probs": [
+        0.07514113932847977,
+        0.9248588681221008
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 16,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0026_796095.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.8634992241859436,
+        0.13650085031986237
+      ],
+      "modified_probs": [
+        0.08847739547491074,
+        0.911522626876831
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 17,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0064_796101.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 1,
+      "modified_pred": 1,
+      "original_probs": [
+        0.14982885122299194,
+        0.8501711487770081
+      ],
+      "modified_probs": [
+        0.048836443573236465,
+        0.9511635303497314
+      ],
+      "flipped": false
+    },
+    {
+      "idx": 18,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0076_417.jpg",
+      "label": 1,
+      "group_id": 2,
+      "original_pred": 0,
+      "modified_pred": 1,
+      "original_probs": [
+        0.7827879786491394,
+        0.2172120064496994
+      ],
+      "modified_probs": [
+        0.1465514749288559,
+        0.8534485101699829
+      ],
+      "flipped": true
+    },
+    {
+      "idx": 19,
+      "image_path": "data\\waterbirds\\waterbird_complete95_forest2water2\\images\\test\\Black_Footed_Albatross_0053_796109.jpg",
+      "label": 1,
+      "group_id": 3,
+      "original_pred": 0,
+      "modified_pred": 0,
+      "original_probs": [
+        0.9266250729560852,
+        0.07337494939565659
+      ],
+      "modified_probs": [
+        0.5903247594833374,
+        0.4096752107143402
+      ],
+      "flipped": false
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "background_modification__gray": {
+    "intervention_type": "background_modification",
+    "method": "gray",
+    "num_samples": 500,
+    "elapsed_seconds": 49.64,
+    "metrics": {
+      "flip_rate": 0.472,
+      "mean_probability_change": 0.1282818764448166,
+      "std_probability_change": 0.47503116726875305,
+      "mean_confidence_change": 0.3402978479862213,
+      "std_confidence_change": 0.3553987145423889,
+      "mean_jsd": 0.1565941721200943,
+      "median_jsd": 0.0811200886964798,
+      "per_group": {
+        "0": {
+          "flip_rate": 0.7176470588235294,
+          "mean_probability_change": 0.5910263061523438,
+          "mean_confidence_change": 0.5761416554450989,
+          "mean_jsd": 0.27243772149086,
+          "count": 170
+        },
+        "1": {
+          "flip_rate": 0.25,
+          "mean_probability_change": 0.07113280892372131,
+          "mean_confidence_change": 0.13862228393554688,
+          "mean_jsd": 0.05045241490006447,
+          "count": 176
+        },
+        "2": {
+          "flip_rate": 0.7948717948717948,
+          "mean_probability_change": -0.5984830856323242,
+          "mean_confidence_change": 0.5512319803237915,
+          "mean_jsd": 0.26504141092300415,
+          "count": 78
+        },
+        "3": {
+          "flip_rate": 0.10526315789473684,
+          "mean_probability_change": -0.02856873907148838,
+          "mean_confidence_change": 0.06330540776252747,
+          "mean_jsd": 0.03197134658694267,
+          "count": 76
+        }
+      }
+    }
+  },
+  "background_modification__blur": {
+    "intervention_type": "background_modification",
+    "method": "blur",
+    "num_samples": 500,
+    "elapsed_seconds": 19.8,
+    "metrics": {
+      "flip_rate": 0.464,
+      "mean_probability_change": 0.09889461100101471,
+      "std_probability_change": 0.45804840326309204,
+      "mean_confidence_change": 0.3341458737850189,
+      "std_confidence_change": 0.32853466272354126,
+      "mean_jsd": 0.14266164600849152,
+      "median_jsd": 0.08856230974197388,
+      "per_group": {
+        "0": {
+          "flip_rate": 0.7058823529411765,
+          "mean_probability_change": 0.5634451508522034,
+          "mean_confidence_change": 0.5494080781936646,
+          "mean_jsd": 0.2454754114151001,
+          "count": 170
+        },
+        "1": {
+          "flip_rate": 0.23863636363636365,
+          "mean_probability_change": 0.0001761886232998222,
+          "mean_confidence_change": 0.14882753789424896,
+          "mean_jsd": 0.04431751370429993,
+          "count": 176
+        },
+        "2": {
+          "flip_rate": 0.782051282051282,
+          "mean_probability_change": -0.5791873931884766,
+          "mean_confidence_change": 0.5331496596336365,
+          "mean_jsd": 0.24706347286701202,
+          "count": 78
+        },
+        "3": {
+          "flip_rate": 0.11842105263157894,
+          "mean_probability_change": -0.01569420099258423,
+          "mean_confidence_change": 0.07755564898252487,
+          "mean_jsd": 0.03327857702970505,
+          "count": 76
+        }
+      }
+    }
+  },
+  "foreground_suppression__gray": {
+    "intervention_type": "foreground_suppression",
+    "method": "gray",
+    "num_samples": 500,
+    "elapsed_seconds": 6.93,
+    "metrics": {
+      "flip_rate": 0.102,
+      "mean_probability_change": 0.0496382899582386,
+      "std_probability_change": 0.1864965707063675,
+      "mean_confidence_change": 0.04964977502822876,
+      "std_confidence_change": 0.18649351596832275,
+      "mean_jsd": 0.026657287031412125,
+      "median_jsd": 0.0062031494453549385,
+      "per_group": {
+        "0": {
+          "flip_rate": 0.07058823529411765,
+          "mean_probability_change": 0.049620646983385086,
+          "mean_confidence_change": 0.07074247300624847,
+          "mean_jsd": 0.025257375091314316,
+          "count": 170
+        },
+        "1": {
+          "flip_rate": 0.17045454545454544,
+          "mean_probability_change": 0.0960388258099556,
+          "mean_confidence_change": 0.05236142873764038,
+          "mean_jsd": 0.030212467536330223,
+          "count": 176
+        },
+        "2": {
+          "flip_rate": 0.07692307692307693,
+          "mean_probability_change": -0.0031563497614115477,
+          "mean_confidence_change": 0.024703916162252426,
+          "mean_jsd": 0.026995964348316193,
+          "count": 78
+        },
+        "3": {
+          "flip_rate": 0.039473684210526314,
+          "mean_probability_change": -0.0035921477247029543,
+          "mean_confidence_change": 0.021791476756334305,
+          "mean_jsd": 0.0212080255150795,
+          "count": 76
+        }
+      }
+    }
+  },
+  "foreground_suppression__blur": {
+    "intervention_type": "foreground_suppression",
+    "method": "blur",
+    "num_samples": 500,
+    "elapsed_seconds": 9.56,
+    "metrics": {
+      "flip_rate": 0.086,
+      "mean_probability_change": 0.030964476987719536,
+      "std_probability_change": 0.16362103819847107,
+      "mean_confidence_change": 0.031751930713653564,
+      "std_confidence_change": 0.1634700447320938,
+      "mean_jsd": 0.01994476094841957,
+      "median_jsd": 0.003354470944032073,
+      "per_group": {
+        "0": {
+          "flip_rate": 0.029411764705882353,
+          "mean_probability_change": -0.010822737589478493,
+          "mean_confidence_change": 0.008463524281978607,
+          "mean_jsd": 0.009071232751011848,
+          "count": 170
+        },
+        "1": {
+          "flip_rate": 0.14204545454545456,
+          "mean_probability_change": 0.023403113707900047,
+          "mean_confidence_change": 0.053135763853788376,
+          "mean_jsd": 0.020014846697449684,
+          "count": 176
+        },
+        "2": {
+          "flip_rate": 0.0641025641025641,
+          "mean_probability_change": 0.0995911955833435,
+          "mean_confidence_change": -0.015886208042502403,
+          "mean_jsd": 0.03685798496007919,
+          "count": 78
+        },
+        "3": {
+          "flip_rate": 0.10526315789473684,
+          "mean_probability_change": 0.07151371985673904,
+          "mean_confidence_change": 0.08321574330329895,
+          "mean_jsd": 0.026746517047286034,
+          "count": 76
+        }
+      }
+    }
+  }
+}
