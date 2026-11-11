@@ -135,29 +135,29 @@ export const BenchmarksPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-4 rounded-xl bg-[#111827] border border-[rgba(148,163,184,0.16)] space-y-2">
               <span className="text-xs font-mono text-[#A7B1C2]">Per-Group Test Accuracy</span>
-              <div className="rounded-lg overflow-hidden bg-black/40">
-                <img src="/api/v1/benchmarks/figures/group_accuracy.png" alt="Group Accuracy" className="w-full h-auto" />
+              <div className="rounded-lg overflow-hidden bg-black/40 border border-[rgba(148,163,184,0.1)]">
+                <img src="/figures/group_accuracy.png" alt="Group Accuracy" className="w-full h-auto object-contain hover:scale-105 transition-transform duration-200" />
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-[#111827] border border-[rgba(148,163,184,0.16)] space-y-2">
               <span className="text-xs font-mono text-[#A7B1C2]">Intervention Impact Comparison</span>
-              <div className="rounded-lg overflow-hidden bg-black/40">
-                <img src="/api/v1/benchmarks/figures/intervention_comparison.png" alt="Intervention Comparison" className="w-full h-auto" />
+              <div className="rounded-lg overflow-hidden bg-black/40 border border-[rgba(148,163,184,0.1)]">
+                <img src="/figures/intervention_comparison.png" alt="Intervention Comparison" className="w-full h-auto object-contain hover:scale-105 transition-transform duration-200" />
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-[#111827] border border-[rgba(148,163,184,0.16)] space-y-2">
               <span className="text-xs font-mono text-[#A7B1C2]">30-Epoch Training Curves</span>
-              <div className="rounded-lg overflow-hidden bg-black/40">
-                <img src="/api/v1/benchmarks/figures/training_history.png" alt="Training History" className="w-full h-auto" />
+              <div className="rounded-lg overflow-hidden bg-black/40 border border-[rgba(148,163,184,0.1)]">
+                <img src="/figures/training_history.png" alt="Training History" className="w-full h-auto object-contain hover:scale-105 transition-transform duration-200" />
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-[#111827] border border-[rgba(148,163,184,0.16)] space-y-2">
               <span className="text-xs font-mono text-[#A7B1C2]">Test Confusion Matrix</span>
-              <div className="rounded-lg overflow-hidden bg-black/40">
-                <img src="/api/v1/benchmarks/figures/confusion_matrix.png" alt="Confusion Matrix" className="w-full h-auto" />
+              <div className="rounded-lg overflow-hidden bg-black/40 border border-[rgba(148,163,184,0.1)]">
+                <img src="/figures/confusion_matrix.png" alt="Confusion Matrix" className="w-full h-auto object-contain hover:scale-105 transition-transform duration-200" />
               </div>
             </div>
           </div>
