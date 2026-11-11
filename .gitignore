@@ -31,6 +31,9 @@ ENV/
 *.h5
 outputs/checkpoints/
 
+# Exception: packaged lightweight weights for cloud deployment
+!backend/checkpoints/resnet18_weights.pt
+
 # =========================
 # Datasets (download separately, see data/README.md)
 # =========================

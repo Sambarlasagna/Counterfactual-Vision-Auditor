@@ -51,3 +51,4 @@ def get_report(audit_id: str):
     if not report:
         raise HTTPException(status_code=404, detail="Audit report not found or expired.")
     return report
+

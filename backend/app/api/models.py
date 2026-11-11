@@ -14,3 +14,4 @@ def get_models():
         models=models_list,
         supported_custom_architectures=["resnet18", "resnet50", "mobilenet_v3_large"]
     )
+

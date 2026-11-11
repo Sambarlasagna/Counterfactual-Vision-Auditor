@@ -30,3 +30,4 @@ def test_benchmarks():
     assert "overall_accuracy" in data
     assert "worst_group_accuracy" in data
     assert len(data["figures"]) > 0
+

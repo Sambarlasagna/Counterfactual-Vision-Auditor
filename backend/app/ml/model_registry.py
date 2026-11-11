@@ -26,8 +26,11 @@ class ModelRegistry:
 
     def _init_demo_model(self):
         demo_id = "waterbirds-resnet18"
-        ckpt_path = os.path.join(PROJECT_ROOT, "outputs", "checkpoints", "resnet18_best.pt")
-        
+        # Primary candidate: packaged weights inside backend/checkpoints/ (included in repo)
+        packaged_weights = os.path.join(os.path.dirname(__file__), "..", "..", "checkpoints", "resnet18_weights.pt")
+        # Fallback candidate: local outputs checkpoint
+        local_ckpt = os.path.join(PROJECT_ROOT, "outputs", "checkpoints", "resnet18_best.pt")
+
         config = {
             "model": {
                 "name": "resnet18",
@@ -59,20 +62,33 @@ class ModelRegistry:
             }
         }
         
-        if os.path.exists(ckpt_path):
+        target_path = None
+        is_state_dict_only = False
+        if os.path.exists(packaged_weights):
+            target_path = packaged_weights
+            is_state_dict_only = True
+        elif os.path.exists(local_ckpt):
+            target_path = local_ckpt
+            is_state_dict_only = False
+
+        if target_path:
             try:
                 model = create_model(config)
-                ckpt = load_checkpoint(ckpt_path, self.device)
-                model.load_state_dict(ckpt["model_state_dict"])
+                if is_state_dict_only:
+                    state_dict = torch.load(target_path, map_location=self.device, weights_only=True)
+                    model.load_state_dict(state_dict)
+                else:
+                    ckpt = load_checkpoint(target_path, self.device)
+                    model.load_state_dict(ckpt["model_state_dict"])
                 model = model.to(self.device)
                 model.eval()
                 self.models[demo_id] = model
                 self.model_configs[demo_id]["is_ready"] = True
-                logger.info(f"Loaded demo model from {ckpt_path} onto {self.device}")
+                logger.info(f"Loaded demo model from {target_path} onto {self.device}")
             except Exception as e:
-                logger.error(f"Failed to load demo checkpoint {ckpt_path}: {e}")
+                logger.error(f"Failed to load demo checkpoint {target_path}: {e}")
         else:
-            logger.warning(f"Checkpoint not found at {ckpt_path}")
+            logger.warning("No checkpoint found for demo model.")
 
     def get_model(self, model_id: str) -> Optional[torch.nn.Module]:
         return self.models.get(model_id)
@@ -91,3 +107,4 @@ class ModelRegistry:
         return self.seg_model
 
 registry = ModelRegistry()
+

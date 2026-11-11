@@ -67,3 +67,4 @@ class BenchmarkSummary(BaseModel):
     group_names: Dict[str, str]
     audit_summary: Dict[str, Any]
     figures: List[str]
+

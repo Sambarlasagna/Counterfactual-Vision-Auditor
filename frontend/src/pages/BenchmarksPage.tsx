@@ -166,3 +166,4 @@ export const BenchmarksPage: React.FC = () => {
     </div>
   );
 };
+

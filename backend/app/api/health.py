@@ -18,3 +18,4 @@ def get_health():
         gpu_name=dev_info.get("gpu_name"),
         demo_model_ready=demo_ready
     )
+

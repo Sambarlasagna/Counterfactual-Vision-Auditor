@@ -75,3 +75,4 @@ export interface HealthStatus {
   gpu_name?: string | null;
   demo_model_ready: boolean;
 }
+

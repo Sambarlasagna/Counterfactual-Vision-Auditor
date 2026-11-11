@@ -11,3 +11,4 @@ Write-Host "[2/2] Vite React frontend running at: http://localhost:5173 (PID: $(
 
 Write-Host "`nOpen http://localhost:5173 in your browser to launch Studio." -ForegroundColor Yellow
 Write-Host "Press Ctrl+C or close this window when done." -ForegroundColor Gray
+

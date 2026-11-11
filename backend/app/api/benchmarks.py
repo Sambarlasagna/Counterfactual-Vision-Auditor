@@ -57,3 +57,4 @@ def get_benchmark_figure(figure_name: str):
     if not os.path.exists(fig_path):
         raise HTTPException(status_code=404, detail="Figure not found.")
     return FileResponse(fig_path, media_type="image/png")
+
