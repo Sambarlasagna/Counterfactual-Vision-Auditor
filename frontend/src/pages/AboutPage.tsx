@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Github, ExternalLink, Code2, Database } from 'lucide-react';
+import { Cpu, ExternalLink, Code2, Database } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
