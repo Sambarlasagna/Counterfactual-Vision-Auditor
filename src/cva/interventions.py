@@ -13,6 +13,7 @@ from dataset-provided masks, and are cached for efficiency.
 
 import hashlib
 import logging
+import os
 from pathlib import Path
 from typing import Dict, List, Literal, Optional, Tuple
 
@@ -63,18 +64,33 @@ class SegmentationModel:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     def _load_model(self):
-        """Lazy-load the segmentation model."""
+        """Lazy-load the segmentation model.
+        
+        Uses MobileNetV3 backbone when CVA_LITE=1 env var is set (saves ~90MB RAM),
+        otherwise uses ResNet-50 backbone for higher quality masks.
+        """
         if self._model is not None:
             return
 
-        from torchvision.models.segmentation import (
-            deeplabv3_resnet50,
-            DeepLabV3_ResNet50_Weights,
-        )
+        use_lite = os.environ.get("CVA_LITE", "0") == "1"
 
-        logger.info("Loading DeepLabV3-ResNet50 segmentation model...")
-        weights = DeepLabV3_ResNet50_Weights.DEFAULT
-        self._model = deeplabv3_resnet50(weights=weights)
+        if use_lite:
+            from torchvision.models.segmentation import (
+                deeplabv3_mobilenet_v3_large,
+                DeepLabV3_MobileNet_V3_Large_Weights,
+            )
+            logger.info("Loading DeepLabV3-MobileNetV3 segmentation model (lite mode)...")
+            weights = DeepLabV3_MobileNet_V3_Large_Weights.DEFAULT
+            self._model = deeplabv3_mobilenet_v3_large(weights=weights)
+        else:
+            from torchvision.models.segmentation import (
+                deeplabv3_resnet50,
+                DeepLabV3_ResNet50_Weights,
+            )
+            logger.info("Loading DeepLabV3-ResNet50 segmentation model...")
+            weights = DeepLabV3_ResNet50_Weights.DEFAULT
+            self._model = deeplabv3_resnet50(weights=weights)
+
         self._model = self._model.to(self.device)
         self._model.eval()
         logger.info("Segmentation model loaded successfully")
