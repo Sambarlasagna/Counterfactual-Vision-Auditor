@@ -207,6 +207,16 @@ export const StudioPage: React.FC = () => {
                 <span className="text-[9px] text-[#718096]">JPEG, PNG, WEBP (Max 10MB)</span>
                 <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" />
               </label>
+              {/* Custom upload preview */}
+              {previewUrl && !selectedSample && selectedFile && (
+                <div className="mt-2 p-2 rounded-lg bg-[#151D2B] border border-indigo-500/40">
+                  <div className="aspect-square rounded overflow-hidden bg-black/40 mb-1.5">
+                    <img src={previewUrl} alt="Custom upload" className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-[11px] text-[#F3F6FC] font-semibold truncate">{selectedFile.name}</p>
+                  <p className="text-[10px] text-[#718096]">Custom Upload</p>
+                </div>
+              )}
             </div>
 
             {/* Run Button */}
