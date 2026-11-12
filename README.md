@@ -10,6 +10,44 @@ This project investigates **shortcut learning** in vision models by:
 2. Applying **counterfactual interventions** (background modification, foreground suppression)
 3. Measuring how predictions change when foreground or background is altered
 4. Testing whether intervention-derived audit scores predict failures under distribution shift
+5. Providing an interactive **Visual Reliability Lab** web application (React + FastAPI) for live sample-by-sample counterfactual auditing
+
+---
+
+## 🌐 Web Application: CVA Visual Reliability Lab
+
+The project includes a full-stack research workstation designed for interactive model auditing and counterfactual experimentation:
+
+- **Auditing Studio:** Upload custom images or choose from benchmark samples across all 4 distribution-shift groups.
+- **Counterfactual Interventions:** Generates real-time DeepLabV3 segmentation masks and applies background modification (gray/blur) and foreground suppression.
+- **Side-by-Side Visualizer:** Compare original inputs against perturbed images with probability shifts, label flips, and Jensen-Shannon Divergence (JSD).
+- **Publication Figures Dashboard:** Browse empirical accuracy curves, confusion matrices, and flip rate disparity plots.
+- **Exportable Reports:** Download comprehensive audit JSON reports with model provenance and scientific caveats.
+
+### Running the Web App Locally
+
+A convenient PowerShell script starts both the FastAPI backend and Vite frontend:
+
+```powershell
+.\start_ui.ps1
+```
+
+Or run them individually:
+
+```bash
+# Terminal 1: Backend API (FastAPI)
+cd backend
+uvicorn app.main:app --reload --port 8000
+
+# Terminal 2: Frontend (React + Vite)
+cd frontend
+npm install
+npm run dev
+```
+
+Visit `http://localhost:5173` in your browser.
+
+---
 
 ## Research Question
 
@@ -141,11 +179,21 @@ python scripts/train_baseline.py --config configs/resnet18.yaml --smoke-test
 ## Project Structure
 
 ```
+├── backend/              # FastAPI application for model serving & live audit
+│   ├── app/              # API routers (health, models, audits, benchmarks)
+│   ├── checkpoints/      # Lightweight packaged weights (42 MB) for deployment
+│   ├── tests/            # API integration tests
+│   ├── build.sh          # Cloud deployment build script (CPU-optimized)
+│   └── run.py            # Production server entry point
+├── frontend/             # React 19 + TypeScript + Vite + Tailwind CSS workstation
+│   ├── src/              # Pages (Studio, Benchmarks, Methodology, About), components
+│   ├── public/           # Static assets, benchmark sample images & publication figures
+│   └── vercel.json       # Production SPA routing configuration
 ├── configs/              # Experiment configuration files (YAML)
 │   ├── resnet18.yaml     # ResNet-18 baseline config
 │   └── vit.yaml          # ViT config (stretch goal)
 ├── data/                 # Dataset directory (not committed; see data/README.md)
-├── src/cva/              # Core library
+├── src/cva/              # Core ML library
 │   ├── config.py         # Configuration loader + validation
 │   ├── datasets.py       # Waterbirds data loading with group metadata
 │   ├── models.py         # Model factory (ResNet-18, ViT)
@@ -169,16 +217,17 @@ python scripts/train_baseline.py --config configs/resnet18.yaml --smoke-test
 │   ├── test_interventions.py
 │   └── test_metrics.py
 ├── outputs/              # Generated results
-│   ├── checkpoints/      # Model checkpoints (~134 MB each)
-│   ├── figures/          # Generated plots (12 figures)
+│   ├── checkpoints/      # Full training checkpoints with optimizer state
+│   ├── figures/          # Generated publication plots (12 figures)
 │   ├── metrics/          # JSON metrics and audit results
 │   ├── logs/             # Training logs and per-epoch metrics
-│   ├── masks/            # Cached segmentation masks
 │   └── reports/          # Generated summary report
-└── docs/                 # Documentation
-    ├── related_work.md   # Literature review table
-    ├── experiment_plan.md # Hypotheses and experimental protocol
-    └── limitations.md    # Known limitations and caveats
+├── docs/                 # Research documentation
+│   ├── related_work.md   # Literature review table (8 papers)
+│   ├── experiment_plan.md # Hypotheses and experimental protocol
+│   └── limitations.md    # Known limitations and caveats
+├── render.yaml           # Render backend cloud deployment specification
+└── start_ui.ps1          # One-click local startup script for frontend & backend
 ```
 
 ## Hardware Requirements
