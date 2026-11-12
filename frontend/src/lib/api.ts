@@ -1,6 +1,7 @@
 import { HealthStatus, ModelInfo, AuditResponse, BenchmarkSummary } from '../types';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
+const RAW_BASE = import.meta.env.VITE_API_BASE_URL || '';
+export const API_BASE = RAW_BASE.replace(/\/+$/, '');
 
 export async function fetchHealth(): Promise<HealthStatus> {
   const res = await fetch(`${API_BASE}/api/v1/health`);
